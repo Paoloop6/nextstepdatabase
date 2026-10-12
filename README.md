@@ -62,4 +62,4 @@ Optional: launch with the argument `-startTab browse` (or `match`, `map`, `saved
 ## AI use
 
 - **In the app**: the Match feature uses DeepSeek on the server to analyze opportunities and explain each match.
-- **In development**: this README was drafted with help from Claude (Anthropic).
+- **In development**: we used Claude (Anthropic) to help develop the app's user interface and to edit our demo video. This README was also drafted with help from Claude.
