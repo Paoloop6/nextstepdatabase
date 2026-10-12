@@ -7,7 +7,7 @@ NextStep Database is a native iPhone app that helps students in grades 6–12 fi
 - [Website, server API, storage schemas and discovery jobs](https://github.com/Paoloop6/STEMPath-Finder-website)
 - [Live website](https://www.nextstepdatabase.fyi/)
 
-The iPhone app and website call a server API backed by DynamoDB, S3 and PostgreSQL. Opportunity discovery uses AWS Lambda, Exa and DeepSeek; the separate video ingestion job uses the YouTube Data API and DeepSeek. See the website repository for the exact code layout and deployment limitations.
+The iPhone app and website call a server API backed by DynamoDB, S3 and PostgreSQL. Opportunity discovery uses AWS Lambda, Exa and DeepSeek; the separate video ingestion job uses the YouTube Data API and DeepSeek. See the website repository for the code layout and deployment configuration.
 
 ## Why we built it
 
@@ -61,10 +61,14 @@ Optional: launch with the argument `-startTab browse` (or `match`, `map`, `saved
 
 ## Data, services and credits
 
-- Opportunity listings, matching and the student video list come from the NextStep Database backend at `nextstepdatabase.fyi`. The backend source snapshots are in the [website/server repository](https://github.com/Paoloop6/STEMPath-Finder-website); its [preserved student-video route](https://github.com/Paoloop6/STEMPath-Finder-website/blob/original-public-main/artifacts/api-server/src/routes/student-videos.ts) is on `original-public-main`.
+- Opportunity listings, matching and the student video list come from the NextStep Database backend at `nextstepdatabase.fyi`. The backend is in the [website/server repository](https://github.com/Paoloop6/STEMPath-Finder-website); its [Student Stories route](https://github.com/Paoloop6/STEMPath-Finder-website/blob/main/artifacts/api-server/src/routes/student-videos.ts) is registered on `main`.
 - Matching uses DeepSeek, an AI model, which runs on the backend server. The app sends the Match form answers. It doesn't send a name, email or account.
 - Maps use Apple MapKit, and addresses are converted to coordinates with Apple's geocoder.
 - Student videos are public YouTube videos owned by their creators. They are shown with YouTube's privacy-enhanced embed (`youtube-nocookie.com`).
+
+## Submission version and verification
+
+The fixed Congressional App Challenge source version is tag `cac-2026-submission` on `main`. The iOS simulator build passed with Xcode 26.6 (Debug, generic iOS Simulator, code signing disabled); no service keys or Swift-source changes were needed. A separate complete history inventory and privacy review is provided for this repository; history was not rewritten. The bundled public student-video metadata, coordinate cache and historical Xcode user-state file are flagged for the owner's publication review.
 
 ## AI use
 
