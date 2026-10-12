@@ -1,0 +1,25 @@
+# macOS and local Xcode state
+.DS_Store
+xcuserdata/
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+
+# Generated build and package files
+DerivedData/
+build/
+.build/
+.swiftpm/
+Carthage/Build/
+
+# Local credentials and configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.key
+*.mobileprovision
+
+# Local data snapshots
+/backups/
