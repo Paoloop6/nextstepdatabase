@@ -2,6 +2,13 @@
 
 NextStep Database is a native iPhone app that helps students in grades 6–12 find STEM opportunities: competitions, research programs, internships, camps and scholarships. It is the iOS companion to the [NextStep Database website](https://www.nextstepdatabase.fyi).
 
+## Related code
+
+- [Website, server API, storage schemas and discovery jobs](https://github.com/Paoloop6/STEMPath-Finder-website)
+- [Live website](https://www.nextstepdatabase.fyi/)
+
+The iPhone app and website call a server API backed by DynamoDB, S3 and PostgreSQL. Opportunity discovery uses AWS Lambda, Exa and DeepSeek; the separate video ingestion job uses the YouTube Data API and DeepSeek. See the website repository for the exact code layout and deployment limitations.
+
 ## Why we built it
 
 Information about STEM programs is spread across hundreds of separate websites, each with its own deadlines, eligibility rules and costs. That makes it hard for students to find programs that fit them, especially students who don't have someone pointing them in the right direction. NextStep Database puts these programs in one place and helps each student find the ones that match their grade, interests and budget.
@@ -54,7 +61,7 @@ Optional: launch with the argument `-startTab browse` (or `match`, `map`, `saved
 
 ## Data, services and credits
 
-- Opportunity listings, matching and the student video list come from the NextStep Database backend at `nextstepdatabase.fyi`. The backend's code is not in this repository.
+- Opportunity listings, matching and the student video list come from the NextStep Database backend at `nextstepdatabase.fyi`. The backend source snapshots are in the [website/server repository](https://github.com/Paoloop6/STEMPath-Finder-website); its [preserved student-video route](https://github.com/Paoloop6/STEMPath-Finder-website/blob/original-public-main/artifacts/api-server/src/routes/student-videos.ts) is on `original-public-main`.
 - Matching uses DeepSeek, an AI model, which runs on the backend server. The app sends the Match form answers. It doesn't send a name, email or account.
 - Maps use Apple MapKit, and addresses are converted to coordinates with Apple's geocoder.
 - Student videos are public YouTube videos owned by their creators. They are shown with YouTube's privacy-enhanced embed (`youtube-nocookie.com`).
